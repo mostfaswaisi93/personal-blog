@@ -7,6 +7,7 @@
     <div class="card">
         <div class="card-header bg-light">
             Admin Products
+            <a href="{{ route('adminNewProduct') }}" class="btn btn-primary">New Product</a>
         </div>
 
         <div class="card-body">
@@ -26,7 +27,7 @@
                         @foreach ($products as $product)
                             <tr>
                                 <td>{{ $product->id }}</td>
-                                <td><img src="{{ $product->thumbnail}}" width="100"></td>
+                                <td><img src="{{ asset($product->thumbnail) }}" width="100"></td>
                                 <td><a href="{{ route('adminEditProduct', $product->id) }}">{{ $product->title }}</a></td>
                                 <td>{{ $product->Description }}</td>
                                 <td>{{ $product->price }} USD</td>
