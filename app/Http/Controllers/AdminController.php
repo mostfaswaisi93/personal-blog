@@ -1,13 +1,17 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Auth;
 use App\Post;
 use App\Comment;
 use App\User;
+use App\Product;
 use App\Http\Requests\UserUpdate;
 use App\Charts\DashboardChart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+
 class AdminController extends Controller
 {
     public function __construct()
@@ -94,5 +98,25 @@ class AdminController extends Controller
     {
         User::find($id)->delete();
         return back();
+    }
+    public function products()
+    {
+        $products = Product::all();
+        return view('admin.products', compact('products'));
+    }
+    public function newProduct()
+    {
+    }
+    public function newProductPost(Request $request, $id)
+    {
+    }
+    public function editProduct()
+    {
+    }
+    public function editProductPost(Request $request, $id)
+    {
+    }
+    public function deleteProductPost(Request $request, $id)
+    {
     }
 }
